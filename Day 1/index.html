@@ -1,0 +1,50 @@
+
+<html>
+    <head>
+        <title>Document</title>
+    </head>
+<body>
+    <h1>TFL Store</h1>
+    <ol>
+        <li>Gerbera</li>
+        <li>Red</li>
+        <li>Lotus</li>
+        <div>
+            <table>
+                <tr>
+                    <td>
+                        <label>Email</label>
+                    </td>
+                    <td>
+                        <input type="email" name="name" id="email"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Password</label>
+                    </td>
+                    <td>
+                        <input type="password" name="password" id="password"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button onclick="onValidate()">Login</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <script>
+            function onValidate() {
+                let emailaddress = document.getElementById("email").value;
+                let password = document.getElementById("password").value;
+                if (emailaddress === "amartyakaushik044@gmail.com" && password === "seed") {
+                    alert("Welcome!");
+                } else {
+                    alert("Invalid credentials. Please try again.");
+                }
+            }
+        </script>
+    </ol>
+</body>
+</html>
