@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart with AngularJS and TypeScript</title>
+    <link rel="stylesheet" href="../styles/cart.css">
+</head>
+
+<body ng-app="shoppingApp">
+
+    <div class="container" ng-controller="ShoppingCartController as data">
+        <header>
+            <h1>Your Shopping Cart</h1>
+        </header>
+
+        <!-- Empty Cart Message -->
+        <div ng-if="data.cart.length === 0" class="empty-cart-message">
+            <p>Your cart is empty!</p>
+        </div>
+
+        <!-- Cart Items -->
+        <div ng-repeat="item in data.cart" class="cart-item">
+            <div class="cart-item-image">
+                <img ng-src="{{item.imagePath}}" alt="{{item.productName}}">
+            </div>
+            <div class="cart-item-details">
+                <h2>{{item.productName}}</h2>
+                <p>Price: ${{item.price | number:2}}</p>
+            </div>
+            <button class="remove-btn" ng-click="data.removeFromCart($index)">
+                Remove
+            </button>
+        </div>
+
+        <!-- Total Price -->
+        <div class="total-price" ng-if="data.cart.length > 0">
+            <strong>Total Price: ${{data.getTotalPrice() | number:2}}</strong>
+        </div>
+
+        <!-- Checkout Button -->
+        <button class="checkout-btn" ng-disabled="data.cart.length === 0" ng-click="data.checkout()">
+            Proceed to Checkout
+        </button>
+    </div>
+
+    <!-- AngularJS Script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="../scripts/app.js"></script>
+
+</body>
+
+</html>
+
