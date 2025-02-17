@@ -1,0 +1,12 @@
+<div>
+  <h1>Product Detail</h1>
+  <div ng-if="$ctrl.product">
+    <h2>{{ $ctrl.product.name }}</h2>
+    <p>ID: {{ $ctrl.product.id }}</p>
+    <p>{{ $ctrl.product.description }}</p>
+    <p>Price: ${{ $ctrl.product.price }}</p>
+  </div>
+  <div ng-if="!$ctrl.product">
+    <p>Product not found.</p>
+  </div>
+</div>

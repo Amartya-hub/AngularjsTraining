@@ -1,0 +1,13 @@
+<div>
+    <h1>Checkout</h1>
+    <form ng-submit="$ctrl.placeOrder()">
+      <label for="name">Name:</label>
+      <input type="text" id="name" ng-model="$ctrl.order.name" required>
+      
+      <label for="address">Address:</label>
+      <input type="text" id="address" ng-model="$ctrl.order.address" required>
+      
+      <button type="submit">Place Order</button>
+    </form>
+  </div>
+  

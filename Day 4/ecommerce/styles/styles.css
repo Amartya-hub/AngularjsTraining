@@ -1,0 +1,100 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    
+}
+
+header {
+    background-color: #4c57af; /* New color: green */
+    color: white;
+    padding: 15px 0; /* Increased padding for better spacing */
+    text-align: center;
+    box-shadow: 0 4px 2px -2px gray; /* Subtle shadow for a 3D effect */
+}
+
+header nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline-block; /* Updated to inline-block for better control */
+    margin: 0 20px; /* Increased margin for more spacing */
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px; /* Slightly larger font size */
+    transition: color 0.3s; /* Smooth transition for hover effect */
+}
+
+header nav ul li a:hover {
+    color: #FFD700; /* Hover color: gold */
+}
+
+header nav ul li a i {
+    margin-right: 10px; /* Slightly more space between icon and text */
+}
+
+header .logo {
+    font-size: 24px; /* Added a larger font size for logo */
+    font-weight: bold; /* Bold text for logo */
+}
+
+
+
+footer {
+    background-color: #f8f9fa;
+    padding: 10px;
+    text-align: center;
+}
+
+.footer-links ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.footer-links ul li a {
+    color: #0275d8;
+    text-decoration: none;
+}
+
+.footer-links ul li a:hover {
+    text-decoration: underline;
+}
+
+.login-options {
+    margin: 20px 0;
+}
+
+.btn-login {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 10px 20px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn-google {
+    background-color: #dd4b39;
+}
+
+.btn-facebook {
+    background-color: #3b5998;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #6c757d;
+}

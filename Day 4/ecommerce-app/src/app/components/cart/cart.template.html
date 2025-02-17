@@ -1,0 +1,10 @@
+<div>
+    <h1>Cart</h1>
+    <ul>
+      <li ng-repeat="item in $ctrl.cartItems">
+        {{item.product.name}} - Quantity: {{item.quantity}}
+      </li>
+    </ul>
+    <a ng-href="#/checkout">Proceed to Checkout</a>
+  </div>
+  
