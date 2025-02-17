@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web 2.0</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular.min.js"></script>
+    <script src="./modules/app.js"></script>
+    <script src="./modules/auth.module.js"></script>
+    <script src="./modules/catlog.module.js"></script>
+    <script src="./controllers/login.controller.js"></script>
+    <script src="./controllers/product.controller.js"></script>
+   
+    
+</head>
+
+   <body>   <!---Module-->
+        <div ng-app="authmodule" ng-controller="loginController">  <!---we are defining controller-->
+            <h1>TFL Store</h1>
+            <ol>
+                <li>SunFlower</li>
+                <li>Roses</li>               <!-------horizontal way to settle product-->
+                <li>Lotus</li>
+                <li>Lily</li>
+            </ol>
+            <hr>           <!-----horizontal line-->
+            <div>
+                <ol>
+                    <li ng-repeat="user in users">{{ user.email }} {{ user.password }}</li>
+                </ol>
+            </div>
+            <div>
+                <form ng-submit="onValidate()">
+                    <table>
+                        <tr>
+                            <td>
+                                <label for="">Email</label>
+                            </td>
+                            <td>
+                                <input type="text" name="email" id="email" ng-model="user.email">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="">Password</label>
+                            </td>
+                            <td>
+                                <input type="password" name="password" id="password" ng-model="user.password">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><button id="loginBtn" type="submit">Login</button></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><p id="loginMessage">Please Login</p></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+        
+        <div ng-app="catlogmodule" ng-controller="ProductController">
+            <h1 style="text-align: center;">Products</h1>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 1rem;">
+                <div ng-repeat="product in products" 
+                     style="border: 1px solid #cacaca; padding: 1rem; width: 300px; display: flex; flex-direction: column; align-items: center; text-align: center; border-radius: 8px; box-shadow: 2px 2px 10px rgba(0,0,0,0.1);">
+                    <img src="{{product.image}}" alt="{{product.name}}" 
+                         style="width: 100px; height: 100px; object-fit: contain; margin-bottom: 0.5rem;">
+                    <h2>{{ product.name }}</h2>
+                    <h4>{{ product.brand }}</h4>
+                    <p>{{ product.processor }}</p>
+                    <p style="font-weight: bold; color: green;">{{ product.price | currency:"₹" }}</p>
+                </div>
+            </div>
+        </div>
+   
+</body>
+</html>
+
+
+
+<body ng-app="mainApp">
+    <div ng-controller="loginController">
+        <h1>TFL Store</h1>
+        <ol>
+            <li>SunFlower</li>
+            <li>Roses</li>
+            <li>Lotus</li>
+            <li>Lily</li>
+        </ol>
+        <hr>
+        <h3>Users</h3>
+        <ul>
+            <li ng-repeat="user in users">{{ user.email }}</li>
+        </ul>
+        <hr>
+        <h3>Login</h3>
+        <form ng-submit="onValidate()">
+            <label>Email:</label>
+            <input type="text" ng-model="user.email">
+            <br>
+            <label>Password:</label>
+            <input type="password" ng-model="user.password">
+            <br>
+            <button type="submit">Login</button>
+        </form>
+        <p id="loginMessage">Please Login</p>
+    </div>
+
+    <div ng-controller="ProductController">
+        <h1 style="text-align: center;">Products</h1>
+        <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
+            <div ng-repeat="product in products" 
+                style="border: 1px solid #cacaca; padding: 1rem; width: 300px; text-align: center; border-radius: 8px; box-shadow: 2px 2px 10px rgba(0,0,0,0.1);">
+                <img src="{{product.image}}" alt="{{product.name}}" style="width: 100px; height: 100px;">
+                <h2>{{ product.name }}</h2>
+                <h4>{{ product.brand }}</h4>
+                <p>{{ product.processor }}</p>
+                <p style="font-weight: bold; color: green;">{{ product.price | currency:"₹" }}</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
